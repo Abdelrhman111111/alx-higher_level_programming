@@ -1,3 +1,6 @@
+#!/usr/bin/python3
+import random
+number = random.randint(-10, 10)
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
