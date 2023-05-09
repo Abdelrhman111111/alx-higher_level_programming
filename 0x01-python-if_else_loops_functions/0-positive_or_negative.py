@@ -1,26 +1,10 @@
 #!/usr/bin/python3
 import random
-number = random.randint(-10, 10)
-#include <stdio.h>
-#include <time.h>
-#include <stdlib.h>
-/**
- * main - ................
- * Return: .............
- */
-int main(void)
-{
-	int i;
+n = random.randint(-10, 10)
+if n > 0:
+    print("{} is positive".format(n))
+elif n == 0:
+    print("{} is zero".format(n))
+else:
+    print("{} is negative".format(n))
 
-	srand(time(0));
-	i = rand() - RAND_MAX / 2;
-
-	if (i > 0)
-		printf("%i is positive\n", i);
-	else if (i < 0)
-		printf("%i is negative\n",i);
-	else
-		printf("%i is zero\n", i);
-
-	return (0);
-}
