@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/bin/bash
 for n in range(0, 100):
     if n == 99:
         print("{}".format(n))
