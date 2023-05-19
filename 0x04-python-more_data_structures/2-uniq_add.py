@@ -2,10 +2,10 @@
 
 
 def uniq_add(my_list=[]):
-    n = []
+    e = []
     s = 0
     for x in my_list:
-        if n not in n:
+        if x not in e:
             s += x
-            n.append(x)
+            e.append(x)
     return s
