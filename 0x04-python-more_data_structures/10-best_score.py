@@ -3,11 +3,11 @@
 
 def best_score(a_dictionary):
     if a_dictionary:
-        l = list(a_dictionary.keys())
+        my = list(a_dictionary.keys())
         s = 0
-        d = ""
-        for x in l:
-            if a_dictionary[x] > s:
+        l = ""
+        for x in my:
+            if a_dictionary[i] > s:
                 s = a_dictionary[x]
-                d = x
-        return d
+                l = x
+        return l
