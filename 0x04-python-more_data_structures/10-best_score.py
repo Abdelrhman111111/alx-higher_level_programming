@@ -7,7 +7,7 @@ def best_score(a_dictionary):
         s = 0
         l = ""
         for x in my:
-            if a_dictionary[i] > s:
+            if a_dictionary[x] > s:
                 s = a_dictionary[x]
                 l = x
         return l
