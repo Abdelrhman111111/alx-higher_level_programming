@@ -27,8 +27,8 @@ void print_python_float(PyObject *p)
  */
 void print_python_bytes(PyObject *p)
 {
-	Py_ssize_t size = 0, i = 0;
-	char *string = NULL;
+	Py_ssize_t s = 0, n = 0;
+	char *str = NULL;
 
 	fflush(stdout);
 	printf("[.] bytes object info\n");
@@ -37,15 +37,15 @@ void print_python_bytes(PyObject *p)
 		printf("  [ERROR] Invalid Bytes Object\n");
 		return;
 	}
-	size = PyBytes_Size(p);
-	printf("  size: %zd\n", size);
-	string = (assert(PyBytes_Check(p)), (((PyBytesObject *)(p))->ob_sval));
-	printf("  trying string: %s\n", string);
-	printf("  first %zd bytes:", size < 10 ? size + 1 : 10);
-	while (i < size + 1 && i < 10)
+	s = PyBytes_Size(p);
+	printf("  size: %zd\n", s);
+	str = (assert(PyBytes_Check(p)), (((PyBytesObject *)(p))->ob_sval));
+	printf("  trying string: %s\n", str);
+	printf("  first %zd bytes:", s < 10 ? s + 1 : 10);
+	while (n < s + 1 && n < 10)
 	{
-		printf(" %02hhx", string[i]);
-		i++;
+		printf(" %02hhx", str[n]);
+		n++;
 	}
 	printf("\n");
 }
