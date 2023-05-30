@@ -1,14 +1,19 @@
 #!/usr/bin/python3
 
+"""..............."""
+
 
 class Square:
+    """.................."""
 
     def __init__(self, size=0, position=(0, 0)):
+        """......................"""
         self.size = size
         self.position = position
 
     @property
     def size(self):
+        """........................"""
         return (self.__size)
 
     @size.setter
@@ -21,6 +26,7 @@ class Square:
 
     @property
     def position(self):
+        """..................."""
         return (self.__position)
 
     @position.setter
@@ -33,15 +39,17 @@ class Square:
         self.__position = value
 
     def area(self):
+        """.........................."""
         return (self.__size * self.__size)
 
     def my_print(self):
+        """........................"""
         if self.__size == 0:
             print("")
             return
 
-        [print("") for x in range(0, self.__position[1])]
+        [print("") for n in range(0, self.__position[1])]
         for i in range(0, self.__size):
             [print(" ", end="") for m in range(0, self.__position[0])]
-            [print("#", end="") for n in range(0, self.__size)]
+            [print("#", end="") for b in range(0, self.__size)]
             print("")
