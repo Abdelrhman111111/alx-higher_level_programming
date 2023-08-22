@@ -19,5 +19,5 @@ if __name__ == '__main__':
                  ORDER BY states.id ASC")
     rows = c.fetchall()
 
-    for r in rows:
-        print(r)
+    for row in rows:
+        print(row)
