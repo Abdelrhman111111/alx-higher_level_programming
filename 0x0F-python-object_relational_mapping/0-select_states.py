@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-................................
+.............................
 """
 
 import MySQLdb
@@ -8,14 +8,14 @@ from sys import argv
 
 if __name__ == '__main__':
     """
-    ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+    ................................
     """
-    dp = MySQLdb.connect(host="localhost", user=argv[1], port=3306,
-                         passwd=argv[2], dp=argv[3])
+    db = MySQLdb.connect(host="localhost", user=argv[1], port=3306,
+                         passwd=argv[2], db=argv[3])
 
-    c = dp.cursor()
+    c = db.cursor()
     c.execute("SELECT * FROM states")
-    r = c.fetchall()
+    rows = c.fetchall()
 
-    for row in r:
+    for row in rows:
         print(row)
