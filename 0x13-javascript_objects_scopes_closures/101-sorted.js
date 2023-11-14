@@ -1,13 +1,13 @@
 #!/usr/bin/node
 
 const d = require('./101-data').d;
-const nD = {};
+const newD = {};
 
 Object.keys(d).map(function (key) {
-  if (!Array.isArray(nD[d[key]])) {
-    nD[d[key]] = [];
+  if (!Array.isArray(newD[d[key]])) {
+    newD[d[key]] = [];
   }
-  nD[dict[key]].push(key);
+  newD[d[key]].push(key);
 });
 
-console.log(nD);
+console.log(newD);
