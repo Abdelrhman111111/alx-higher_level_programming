@@ -1,8 +1,8 @@
 #!/usr/bin/node
 
-const req = require('request');
+const req =  require('request');
 
-function getDataFrom (url) {
+function get (url) {
   return new Promise(function (resolve, reject) {
     req(url, function (err, _res, body) {
       if (err) {
@@ -21,14 +21,14 @@ function errHandler (err) {
 function printMovieCharacters (movieId) {
   const movieUri = `https://swapi-api.hbtn.io/api/films/${movieId}`;
 
-  getDataFrom(movieUri)
+  get(movieUri)
     .then(JSON.parse, errHandler)
     .then(function (res) {
       const characters = res.characters;
       const promises = [];
 
       for (let i = 0; i < characters.length; ++i) {
-        promises.push(getDataFrom(characters[i]));
+        promises.push(get(characters[i]));
       }
 
       Promise.all(promises)
