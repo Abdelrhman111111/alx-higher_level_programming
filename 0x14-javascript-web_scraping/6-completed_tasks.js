@@ -1,0 +1,25 @@
+#!/usr/bin/node
+
+const req = require('request');
+
+req(process.argv[2], function (err, _res, body) {
+  if (err) {
+    console.log(err);
+  } else {
+    const complet = {};
+    body = JSON.parse(body);
+
+    for (let i = 0; i < body.length; ++i) {
+      const userId = body[i].userId;
+      const completed = body[i].completed;
+
+      if (completed && !complet[userId]) {
+        completedTasksByUsers[userId] = 0;
+      }
+
+      if (completed) ++complet[userId];
+    }
+
+    console.log(complet);
+  }
+});
