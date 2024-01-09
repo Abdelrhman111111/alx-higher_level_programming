@@ -2,7 +2,7 @@
 
 const req = require('request');
 
-function getDataFrom (url) {
+function getD (url) {
   return new Promise(function (resolve, reject) {
     req(url, function (err, _res, body) {
       if (err) {
@@ -21,14 +21,14 @@ function errHandler (err) {
 function print (movieId) {
   const movieUri = `https://swapi-api.hbtn.io/api/films/${movieId}`;
 
-  getDataFrom(movieUri)
+  getD(movieUri)
     .then(JSON.parse, errHandler)
     .then(function (res) {
       const characters = res.characters;
       const promises = [];
 
       for (let x = 0; x < characters.length; ++x) {
-        promises.push(getDataFrom(characters[x]));
+        promises.push(getD(characters[x]));
       }
 
       Promise.all(promises)
