@@ -34,7 +34,7 @@ function printMovieCharacters (movieId) {
       Promise.all(promises)
         .then((results) => {
           for (let x = 0; x < results.length; ++x) {
-            console.log(JSON.parse(results[i]).name);
+            console.log(JSON.parse(results[x]).name);
           }
         })
         .catch((err) => {
