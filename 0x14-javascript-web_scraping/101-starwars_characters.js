@@ -18,7 +18,7 @@ function errHandler (err) {
   console.log(err);
 }
 
-function printMovieCharacters (movieId) {
+function print (movieId) {
   const movieUri = `https://swapi-api.hbtn.io/api/films/${movieId}`;
 
   getDataFrom(movieUri)
@@ -43,4 +43,4 @@ function printMovieCharacters (movieId) {
     });
 }
 
-printMovieCharacters(process.argv[2]);
+print(process.argv[2]);
