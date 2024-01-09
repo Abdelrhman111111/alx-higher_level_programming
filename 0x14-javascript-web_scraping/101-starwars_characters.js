@@ -27,13 +27,13 @@ function printMovieCharacters (movieId) {
       const characters = res.characters;
       const promises = [];
 
-      for (let x = 0; x < characters.length; ++x) {
+      for (let i = 0; i < characters.length; ++i) {
         promises.push(getDataFrom(characters[i]));
       }
 
       Promise.all(promises)
         .then((results) => {
-          for (let x = 0; x < results.length; ++x) {
+          for (let i = 0; i < results.length; ++i) {
             console.log(JSON.parse(results[i]).name);
           }
         })
