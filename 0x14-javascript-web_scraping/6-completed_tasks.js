@@ -6,20 +6,20 @@ req(process.argv[2], function (err, _res, body) {
   if (err) {
     console.log(err);
   } else {
-    const complet = {};
+    const comp = {};
     body = JSON.parse(body);
 
-    for (let i = 0; i < body.length; ++i) {
-      const userId = body[i].userId;
-      const completed = body[i].completed;
+    for (let x = 0; x < body.length; ++x) {
+      const Id = body[x].userId;
+      const completed = body[x].completed;
 
-      if (completed && !complet[userId]) {
-        completedTasksByUsers[userId] = 0;
+      if (completed && !comp[Id]) {
+        comp[Id] = 0;
       }
 
-      if (completed) ++complet[userId];
+      if (completed) ++comp[Id];
     }
 
-    console.log(complet);
+    console.log(comp);
   }
 });
